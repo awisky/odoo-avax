@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="avax_connector_wizard_form" model="ir.ui.view">
+        <field name="name">avax.connector.wizard.form</field>
+        <field name="model">avax.connector.wizard</field>
+        <field name="arch" type="xml">
+            <form string="AvaxConnector">
+                <group>
+                    <field name="message" />
+                </group>
+                <footer>
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="avax_connector_wizard_form_action" model="ir.actions.act_window">
+        <field name="name">Avax Connector</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">avax.connector.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

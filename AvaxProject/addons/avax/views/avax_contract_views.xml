@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<odoo>
+
+
+    <record id="avax_contract_function_view_form" model="ir.ui.view">
+        <field name="name">avax.contract.function.form</field>
+        <field name="model">avax.contract.function</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="contract_id" />
+                        <field name="state_mutability" />
+                    </group>
+                    <notebook>
+                        <page name="inputs" string="Inputs">
+                            <field name="input_ids" nolabel="1" mode="tree">
+                                <tree >
+                                    <field name="position" />
+                                    <field name="name" />
+                                    <field name="input_type" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="avax_contract_view_tree" model="ir.ui.view">
+        <field name="name">avax.contract.tree</field>
+        <field name="model">avax.contract</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="connector_id" />
+                <field name="account_id" />
+                <field name="address" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="avax_contract_view_form" model="ir.ui.view">
+        <field name="name">avax.contract.form</field>
+        <field name="model">avax.contract</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_test" string="Test" type="object" class="oe_highlight" attrs="{'invisible': [('address', '=', False)]}"/>
+                    <button name="action_compile" string="Compile" type="object" class="oe_highlight" attrs="{'invisible': [('abi', '!=', False)]}" />
+                    <button name="action_deploy" string="Deploy" type="object" class="oe_highlight" attrs="{'invisible': [('address', '!=', False)]}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="connector_id" />
+                        <field name="address" />
+                        <field name="explorer_url" widget ="url"/>
+                    </group>
+                    <notebook>
+                        <page name="functions" string="Functions">
+                            <field name="function_ids" nolabel="1" mode="tree">
+                                <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="id" invisible="1"/>
+                                    <field name="state_mutability" />
+                                    <button name="%(avax_contract_wizard_form_action)d" context="{'function_id': id}" type="action" title="Test this function" icon="fa-refresh" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="abi" string="Abi">
+                            <field name="abi" />
+                        </page>
+                        <page name="solidity" string="Solidity">
+                            <field name="solidity" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="o_attachment_preview" />
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="avax_contract_action" model="ir.actions.act_window">
+        <field name="name">Avax Contract</field>
+        <field name="res_model">avax.contract</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Avax Contract
+            </p>
+        </field>
+    </record>
+
+
+</odoo>

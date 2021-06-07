@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="avax_contract_wizard_form" model="ir.ui.view">
+        <field name="name">avax.contract.wizard.form</field>
+        <field name="model">avax.contract.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Avax Contract Tester">
+                <group>
+                    <field name="function_id" />
+                    <field name="state_mutability" />
+                    <field name="account_id" attrs="{'invisible': [('state_mutability', '=', 'view')]}" />
+                    <field name="value" attrs="{'invisible': [('state_mutability', '!=', 'payable')]}" />
+                    <field name="password" password="1" attrs="{'invisible': [('state_mutability', '=', 'view')]}" />
+                </group>
+                <field name="input_ids" nolabel="1" mode="tree">
+                    <tree editable="bottom" create="false" delete="false">
+                        <field name="input_id" force_save="1"/>
+                        <field name="input_type" force_save="1"/>
+                        <field name="account_id" force_save="1" attrs="{'readonly': [('input_type', '!=', 'address')]}" />
+                        <field name="value" force_save="1"/>
+                    </tree>
+                </field>
+                <footer>
+                    <button name="action_test_function" string="Test" type="object" class="oe_highlight" />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="avax_contract_wizard_form_action" model="ir.actions.act_window">
+        <field name="name">Avax Contract Function Test</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">avax.contract.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

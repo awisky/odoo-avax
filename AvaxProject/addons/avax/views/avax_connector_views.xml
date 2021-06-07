@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="avax_connector_view_tree" model="ir.ui.view">
+        <field name="name">avax.connector.tree</field>
+        <field name="model">avax.connector</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="service_url" />
+                <field name="chain" />
+                <field name="symbol" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="avax_connector_view_form" model="ir.ui.view">
+        <field name="name">avax.connector.form</field>
+        <field name="model">avax.connector</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_test" string="Test" type="object" class="oe_highlight" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Connector" class="oe_edit_only" />
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="service_url" widget ="url"/>
+                            <field name="chain" />
+                            <field name="symbol" />
+                            <field name="explorer_url" widget ="url"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="avax_connector_action" model="ir.actions.act_window">
+        <field name="name">Avax Connector</field>
+        <field name="res_model">avax.connector</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Avax Connector
+            </p>
+
+        </field>
+    </record>
+
+</odoo>

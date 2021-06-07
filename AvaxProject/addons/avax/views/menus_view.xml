@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Top menu item -->
+    <menuitem id="avax_menu_root"
+              name="Avax"
+              sequence="5"
+              web_icon="avax,static/description/avalanche-avax-logo.png"/>  
+
+    <!-- Configuration -->
+    <menuitem id="avax_config_menu"
+              name="Configuration"
+              parent="avax_menu_root"
+              sequence="99"/>
+
+    <menuitem id="avax_connector_menu"
+              parent="avax_config_menu"
+              sequence="1"
+              name="Connectors"
+              action="avax_connector_action"
+              />
+
+    <menuitem id="avax_account_menu"
+              parent="avax_config_menu"
+              sequence="2"
+              name="Accounts"
+              action="avax_account_action"
+              />
+    
+    <menuitem id="avax_contract_menu"
+              parent="avax_config_menu"
+              sequence="3"
+              name="Contracts"
+              action="avax_contract_action"
+              />
+
+</odoo>

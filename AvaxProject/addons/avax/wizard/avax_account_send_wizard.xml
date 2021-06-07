@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="avax_account_send_wizard_form" model="ir.ui.view">
+        <field name="name">avax.account.send.wizard.form</field>
+        <field name="model">avax.account.send.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Avax Account Send">
+                <group>
+                    <field name="account_id" />
+                    <field name="balance" />
+                    <field name="password" password="1" />
+                    <field name="account_to_id" />
+                    <field name="address" />
+                    <field name="amount" />
+                </group>
+                <footer>
+                    <button name="action_send" string="Send" type="object" class="oe_highlight" />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="avax_account_send_wizard_form_action" model="ir.actions.act_window">
+        <field name="name">Avax Account Send</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">avax.account.send.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

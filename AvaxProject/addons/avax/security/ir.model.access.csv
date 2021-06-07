@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_avax_connector,access_avax_connector,model_avax_connector,base.group_user,1,1,1,1
+access_avax_connector_wizard,access_avax_connector_wizard,model_avax_connector_wizard,base.group_user,1,1,1,1
+access_avax_contract,access_avax_contract,model_avax_contract,base.group_user,1,1,1,1
+access_avax_contract_function,access_avax_contract_function,model_avax_contract_function,base.group_user,1,1,1,1
+access_avax_contract_function_input,access_avax_contract_function_input,model_avax_contract_function_input,base.group_user,1,1,1,1
+access_avax_account,access_avax_account,model_avax_account,base.group_user,1,1,1,1
+access_avax_account_wizard,access_avax_account_wizard,model_avax_account_wizard,base.group_user,1,1,1,1
+access_avax_account_send_wizard,access_avax_account_send_wizard,model_avax_account_send_wizard,base.group_user,1,1,1,1
+access_avax_contract_wizard,access_avax_contract_wizard,model_avax_contract_wizard,base.group_user,1,1,1,1
+access_avax_contract_wizard_input,access_avax_contract_wizard_input,model_avax_contract_wizard_input,base.group_user,1,1,1,1
+access_avax_contract_deploy_wizard,access_avax_contract_deploy_wizard,model_avax_contract_deploy_wizard,base.group_user,1,1,1,1

@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Odoo: Attach",
+            "type": "python",
+            "request": "attach",
+            "port": 8879,
+            "debugServer": 8888,
+            "host": "localhost",
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}/AvaxProject/addons",
+                    "remoteRoot": "/mnt/extra-addons", //path to custom addons inside docker
+                },
+                {
+                    "localRoot": "/dev/odoo", //odoo source code
+                    "remoteRoot": "/odoo", //path to source inside docker
+                }
+            ],
+            "logToFile": true,
+            "justMyCode": false,
+            //"preLaunchTask": "init docker",
+            //"postDebugTask": "stop docker"
+        }
+    ]
+}

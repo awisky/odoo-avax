@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="avax_fuji_connector" model="avax.connector">
+            <field name="name">Avalanche FUJI C-Chain</field>
+            <field name="service_url">https://api.avax-test.network/ext/bc/C/rpc</field>
+            <field name="chain">43113</field>
+            <field name="symbol">AVAX</field>
+            <field name="explorer_url">https://cchain.explorer.avax-test.network/</field>
+        </record>
+
+    </data>
+
+</odoo>
