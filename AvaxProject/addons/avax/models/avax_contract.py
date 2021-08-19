@@ -65,7 +65,7 @@ class AvaxContract(models.Model):
     @api.depends('abi')
     def _compute_functions(self):
         """
-        This function is to contruct the smart contract functions and inputs
+        This function is to construct the smart contract functions and inputs
         based on the abi json
         """
         avax_fun_obj = self.env['avax.contract.function']

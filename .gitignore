@@ -4,3 +4,4 @@ __pycache__/
 .idea
 # compiled python files
 *.py[co]
+.vscode/
