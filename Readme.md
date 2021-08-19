@@ -36,7 +36,7 @@ I included the FUJI Testnet connector set up in the demo data.
 
 I packed this inside a docker-compose.
 
-#### How to basic steps:
+#### basic steps:
 
 - Clone this repository
 - Initialize the docker container
