@@ -7,7 +7,8 @@
             <form string="Avax Contract Deploy">
                 <group>
                     <field name="contract_id" />
-                    <field name="account_id" />
+                    <field name="connector_id" invisible="1"/> 
+                    <field name="account_id" domain="[('connector_id', '=', connector_id)]"/>
                     <field name="password" password="1" />
                 </group>
                 <footer>

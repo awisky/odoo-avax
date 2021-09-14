@@ -35,6 +35,7 @@
                             <field name="chain" />
                             <field name="symbol" />
                             <field name="explorer_url" widget ="url"/>
+                            <field name="fund_url" widget ="url"/>
                         </group>
                     </group>
                 </sheet>

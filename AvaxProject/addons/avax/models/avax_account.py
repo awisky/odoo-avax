@@ -3,7 +3,6 @@
 
 from odoo import fields, models, api, _
 from web3 import Web3
-import json
 import logging
 
 _logger = logging.getLogger(__name__)
@@ -26,6 +25,18 @@ class AvaxAccount(models.Model):
     user_id = fields.Many2one('res.users')
     connector_id = fields.Many2one('avax.connector', required=True)
     explorer_url = fields.Char(compute='_compute_url')
+    fund_url = fields.Char(related='connector_id.fund_url')
+
+    @api.depends('name', 'connector_id')
+    def name_get(self):
+        result = []
+        for rec in self:
+            result.append((
+                rec.id, _("%(name)s [%(connector)s]") % {
+                    'name': rec.name, 'connector': rec.connector_id.name,
+                })
+            )
+        return result
 
     @api.depends('address', 'connector_id')
     def _compute_url(self):
@@ -110,3 +121,8 @@ class AvaxAccount(models.Model):
         msg += 'Explorer:{} \n'.format(url)
         self.message_post(body=msg)
         return
+
+    def action_fund(self, password, to, amount):
+        """
+        got to fund
+        """

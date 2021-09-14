@@ -62,6 +62,17 @@ class AvaxContract(models.Model):
         'avax.contract.function', 'contract_id', auto_join=True,
         compute='_compute_functions')
 
+    @api.depends('name', 'connector_id')
+    def name_get(self):
+        result = []
+        for rec in self:
+            result.append((
+                rec.id, _("%(name)s [%(connector)s]") % {
+                    'name': rec.name, 'connector': rec.connector_id.name,
+                })
+            )
+        return result
+
     @api.depends('abi')
     def _compute_functions(self):
         """
@@ -189,7 +200,7 @@ class AvaxContract(models.Model):
 
         withdraw_txn = contract.constructor().buildTransaction({
             'nonce': nonce,
-            'chainId': 43113,
+            'chainId': self.connector_id.chain,
             'gasPrice': w3.eth.gas_price,
             'gas': 1000000
         })

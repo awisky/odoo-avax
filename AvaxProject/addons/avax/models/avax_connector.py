@@ -1,7 +1,7 @@
 # © 2021 Agustin Wisky (<https://github.com/awisky>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models, _
+from odoo import fields, models
 from ast import literal_eval
 from web3 import Web3
 
@@ -43,6 +43,7 @@ class AvaxConnector(models.Model):
     chain = fields.Integer(required=True, string='Chain ID')
     symbol = fields.Char()
     explorer_url = fields.Char()
+    fund_url = fields.Char()
 
     def _get_default_connector(self):
         """

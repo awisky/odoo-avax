@@ -7,8 +7,18 @@
             <field name="chain">43113</field>
             <field name="symbol">AVAX</field>
             <field name="explorer_url">https://cchain.explorer.avax-test.network/</field>
+            <field name="fund_url">https://faucet.avax-test.network</field>
         </record>
 
+        <!-- Here you need to change the service url based on your infura project-->
+        <record id="ethereum_ropsten_connector" model="avax.connector">
+            <field name="name">Ethereum Ropsten</field>
+            <field name="service_url">https://ropsten.infura.io/v3/b7f1544ae31e412891efc81cc2857f0d</field>
+            <field name="chain">3</field>
+            <field name="symbol">ETH</field>
+            <field name="explorer_url">https://ropsten.etherscan.io/</field>
+            <field name="fund_url">https://faucet.ropsten.be</field>
+        </record>
     </data>
 
 </odoo>

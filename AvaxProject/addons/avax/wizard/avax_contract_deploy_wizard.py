@@ -18,6 +18,7 @@ class AvaxContractDeployWizard(models.TransientModel):
     password = fields.Char()
     contract_id = fields.Many2one(
         'avax.contract', default=_get_default_contract_id, required=True)
+    connector_id = fields.Many2one(related='contract_id.connector_id')
 
     def action_deploy(self):
         for wizard in self:

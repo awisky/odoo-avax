@@ -34,6 +34,7 @@
                         <field name="password" password="1" />
                         <field name="balance" readonly="1" force_save="1"/>
                         <field name="encrypted_key" readonly="1" force_save="1" />
+                        <field name="fund_url" widget ="url"/>
                         <field name="explorer_url" widget ="url"/>
                     </group>
 
